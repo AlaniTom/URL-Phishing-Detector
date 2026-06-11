@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>URL Phishing Detector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">🛡️ PhishGuard</div>
+    <p class="tagline">Detect dangerous URLs before it's too late</p>
+  </header>
+
+  <main>
+    <div class="card">
+
+            <div class="input-group">
+        <input
+          type="text"
+          id="urlInput"
+          placeholder="e.g. https://example.com/login"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="checkBtn" onclick="checkURL()">Analyse</button>
+      </div>
+
+      <div id="resultBox" class="result-box hidden">
+        <div id="verdict" class="verdict"></div>
+        <div class="score-section">
+          <span class="score-label">Risk Score</span>
+          <div class="score-bar-bg">
+            <div id="scoreBar" class="score-bar"></div>
+          </div>
+          <span id="scoreText" class="score-text"></span>
+        </div>
+        <div id="flagsList" class="flags-list"></div>
+      </div>
+
+      <button id="clearBtn" class="clear-btn hidden" onclick="clearAll()">🔄 Check Another URL</button>
+
+    </div>
+
+    <div class="how-it-works">
+      <h2>What do we check?</h2>
+      <div class="checks-grid">
+        <div class="check-item">🔒 <strong>Protocol</strong><br/>Is it HTTP or HTTPS?</div>
+        <div class="check-item">🔢 <strong>IP Address</strong><br/>Using numbers instead of a domain?</div>
+        <div class="check-item">📏 <strong>URL Length</strong><br/>Unusually long URLs are suspicious</div>
+        <div class="check-item">🔑 <strong>Keywords</strong><br/>Words like "login", "verify", "bank"</div>
+        <div class="check-item">🌐 <strong>Subdomains</strong><br/>Too many dots in the domain?</div>
+        <div class="check-item">✏️ <strong>Typosquatting</strong><br/>Misspelled brand names</div>
+        <div class="check-item">🔣 <strong>Special Chars</strong><br/>Suspicious @ or // patterns</div>
+        <div class="check-item">📁 <strong>File Extensions</strong><br/>Links ending in .exe or .zip</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>⚠️ This tool is for educational purposes only.</p>
+    <p>Built with ❤️ using HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
