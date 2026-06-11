@@ -87,20 +87,20 @@ function checkSubdomains(url) {
 
 // ── CHECK 6: Typosquatting ──
 function checkTyposquatting(url) {
-  const patterns = [
-    [/paypa[l1]|paypai/i,           "PayPal"],
-    [/g[o0][o0]gle|googl[e3]/i,     "Google"],
-    [/[a4]m[a4]z[o0]n|arnazon/i,    "Amazon"],
-    [/[f4]aceb[o0][o0]k/i,          "Facebook"],
-    [/[a4]pple|appl[e3]/i,          "Apple"],
-    [/micr[o0]s[o0]ft|micros0ft/i,  "Microsoft"],
-    [/netfl[i1]x|netf1ix/i,         "Netflix"],
-    [/[i1]nstagram|instaqram/i,     "Instagram"],
-    [/twitt[e3]r|tw1tter/i,         "Twitter"],
-    [/linkedln|l[i1]nked[i1]n/i,    "LinkedIn"],
-    [/y[o0]utube|y0utube/i,         "YouTube"],
-    [/wh[a4]ts[a4]pp/i,             "WhatsApp"]
-  ];
+const patterns = [
+  [/paypa[l1]|paypai/i, "PayPal"],
+  [/g00gle|googl3/i, "Google"],
+  [/[a4]m[a4]z[o0]n|arnazon/i, "Amazon"],
+  [/[f4]aceb[o0][o0]k/i, "Facebook"],
+  [/4pple|appl3/i, "Apple"],
+  [/micr[o0]s[o0]ft|micros0ft/i, "Microsoft"],
+  [/netfl[i1]x|netf1ix/i, "Netflix"],
+  [/[i1]nstagram|instaqram/i, "Instagram"],
+  [/twitt[e3]r|tw1tter/i, "Twitter"],
+  [/linkedln|l[i1]nked[i1]n/i, "LinkedIn"],
+  [/y[o0]utube|y0utube/i, "YouTube"],
+  [/wh[a4]ts[a4]pp/i, "WhatsApp"]
+]; 
   const lowerURL = url.toLowerCase();
   for (const [pattern, brand] of patterns) {
     if (pattern.test(lowerURL)) return {
